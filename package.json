@@ -2,7 +2,10 @@
 	"name": "kitchecker",
 	"displayName": "KitChecker",
 	"description": "Check a HTML kit to see if there are no errors in it",
+	"publisher": "Gamcoh",
+	"repository": "https://github.com/gamcoh/kitchecker-vscode",
 	"version": "0.0.1",
+	"icon": "images/kitchecker.png",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
