@@ -5,6 +5,24 @@ import * as fs from 'fs';
 import * as request from 'request';
 
 const ENDPOINT = 'http://api.tracker.adventureconseil.com/kitchecker/';
+const LANG_REPORT: { [s: string]: string; } = {
+	utms: "There's a missing utm in this link: ",
+	utmIssue: "There's a problem with utms: ",
+	href_malformed: "This link is poorly build: ",
+	img_not_hosted: "This image is not hosted: ",
+	encoding_meta: "This HTML kit is not well encoded: ",
+	spaces_links: "This link has spaces in it: ",
+	line_breaks_links: "This link has line breaks in it: ",
+	css: "There's extern css links: ",
+	js: "There's JS in this kit: ",
+	mirrors: "There's a mirror link in this kit: ",
+	unsubs: "There's unsubscribe links in this kit: ",
+	multipleInterogationPoint: "This link has multiple interogation point in it: ",
+	attr_without_quote: "These values don't have quotes surrounding them: ",
+	interogation_and_link: "This link have an interogation point directly followed by a '&': ",
+	and_interogation_link: "This link have a '&' directly followed by an interogation point: ",
+	socials_tracked: "This social link is tracked: "
+};
 
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('extension.kitchecker', () => {
@@ -49,7 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
 						for (const key2 in element) {
 							if (element.hasOwnProperty(key2)) {
 								const element2 = element[key2];
-								vscode.window.showWarningMessage(`l'utm: "${element2}" n'est pas dans le lien: ${key2}`);
+								vscode.window.showWarningMessage(`${LANG_REPORT[key]}${key2}; key: ${element2}`);
 							}
 						}
 					}
