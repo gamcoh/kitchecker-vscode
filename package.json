@@ -4,7 +4,7 @@
 	"description": "Check a HTML kit to see if there are no errors in it",
 	"publisher": "Gamcoh",
 	"repository": "https://github.com/gamcoh/kitchecker-vscode",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"icon": "images/kitchecker.png",
 	"engines": {
 		"vscode": "^1.36.0"
@@ -43,6 +43,7 @@
 		"vscode-test": "^1.0.0-next.0"
 	},
 	"dependencies": {
-		"@types/request": "^2.48.1"
+		"@types/request": "^2.48.1",
+		"request": "^2.88.0"
 	}
 }
