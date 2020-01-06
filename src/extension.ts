@@ -4,7 +4,7 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as request from 'request';
 
-const ENDPOINT = 'http://api.tracker.adventureconseil.com/kitchecker/';
+const ENDPOINT = 'https://api.tracker.adventureconseil.com/kitchecker/';
 const LANG_REPORT: { [s: string]: string; } = {
 	utms: "There's a missing utm in this link: ",
 	utmIssue: "There's a problem with utms: ",
